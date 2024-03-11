@@ -4,9 +4,9 @@
 <h2>{{ object.name }}</h2>
 <h3>Ingredients needed for this recipe:</h3>
 <ul>
-    {% for ingredient in object.ingredients.all %}
-    <li>{{ ingredient.ingredient.name }}: {{ ingredient.quantity }}</li>
+    {% for ingredients in object.ingredient.all %}
+    <li>{{ ingredients.ingredient.name }}: {{ ingredients.quantity }}</li>
     {% endfor %}
 </ul>
-<a href="/recipes/list">< Recipes List</a>
+<a href="/list">< Recipes List</a>
 {% endblock %}
