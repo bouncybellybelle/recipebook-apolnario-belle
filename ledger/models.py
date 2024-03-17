@@ -1,9 +1,13 @@
 from django.db import models
 from django.urls import *
+from django.contrib.auth.models import *
 
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    created_on = models.DateTimeField(auto_now_add=True)
+    update_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -37,3 +41,9 @@ class RecipeIngredient(models.Model):
 
     def get_absolute_url(self):
         return reverse('recipeingredient_detail', args=[str(self.quantity)])
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    short_bio = models.CharField(max_length=300)
