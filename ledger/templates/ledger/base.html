@@ -14,14 +14,14 @@
     </main>
 
 </body>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
-<form method="POST" action="'{% url 'logout' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Logout</button>
-</form>
+<!--<form method="POST">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <button type="submit">Login</button>-->
+<!--</form>-->
+<!--<form method="POST" action="'{% url 'logout' %}">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <button type="submit">Logout</button>-->
+<!--</form>-->
 </html>
