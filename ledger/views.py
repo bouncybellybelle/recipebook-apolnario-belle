@@ -13,19 +13,7 @@ class RecipesListView(ListView):
     template_name = 'ledger/recipes_list.html'
 
 
-# class RecipeDetailsView(DetailView):
-#     model = Recipe
-#     template_name = 'ledger/recipes.html'
-
-
 class RecipeDetailsView(LoginRequiredMixin, TemplateView):
-    # model = Profile
-    # template_name = "ledger/recipes_list.html"
     model = Recipe
     template_name = 'ledger/recipes.html'
     redirect_field_name = 'ledger/login.html'  # url to redirect when not logged in
-
-
-# @login_required
-# def view_function(request):
-#     return RecipeDetailsView

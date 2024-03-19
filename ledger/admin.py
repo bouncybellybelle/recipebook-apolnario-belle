@@ -24,11 +24,11 @@ class ProfileInline(admin.StackedInline):
     can_delete = False
 
 
-class UserAdmin(admin.BaseUserAdmin):
+class UserAdmin(BaseUserAdmin):
     inlines = [ProfileInline, ]
 
 
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.unregister(User)
-admin.site.register(User, BaseUserAdmin)
+admin.site.register(User, UserAdmin)
